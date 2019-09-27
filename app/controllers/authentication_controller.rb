@@ -14,6 +14,10 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def index
+    render json: @current_user, serializer: UserSerializer, status: :ok
+  end
+
   private
 
   def login_params
