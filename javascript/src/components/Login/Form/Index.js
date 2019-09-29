@@ -54,7 +54,7 @@ export const LoginForm = ({onSubmit}) => {
             />
           </div>
           <div className="form-group">
-            <button disabled={isSubmitting} className="btn btn-primary mr-2">
+            <button type='submit' disabled={isSubmitting} className="btn btn-primary mr-2">
               Login
             </button>
           </div>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import cookies from './cookies'
-const url = 'http://localhost:3001/'
+
+const url = process.env.NODE_ENV === 'production' ? 'https://note-gas.herokuapp.com/' : 'http://localhost:3001/'
 
 export default{
   get: function(path){
