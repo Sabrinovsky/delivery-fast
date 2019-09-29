@@ -11,7 +11,7 @@ export const LoginForm = ({onSubmit}) => {
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string()
-          .email("Email is invalid")
+          .email("Email não é válido")
           .required("Email is required"),
         password: Yup.string()
           .min(6, "Password must be at least 6 characters")
@@ -19,7 +19,7 @@ export const LoginForm = ({onSubmit}) => {
           .required("Confirm Password is required")
       })}
       onSubmit={onSubmit}
-      render={({ errors, status, touched }) => (
+      render={({ errors, status, touched, isSubmitting }) => (
         <Form className='container'>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -54,11 +54,8 @@ export const LoginForm = ({onSubmit}) => {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary mr-2">
-              Register
-            </button>
-            <button type="reset" className="btn btn-secondary">
-              Reset
+            <button disabled={isSubmitting} className="btn btn-primary mr-2">
+              Login
             </button>
           </div>
         </Form>

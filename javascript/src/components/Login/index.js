@@ -1,44 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import { LoginForm } from './Form/Index'
-import axios from 'axios'
 import cookies from '../../services/cookies'
 import request from '../../services/request'
-import UserContext from '../../services/userContext'
 
-const url = 'http://localhost:3001/auth/login'
 
 export const Login = () =>{
 
-  const user = React.useContext(UserContext)
-
-  console.log(user) // { name: 'Tania', loggedIn: true }
+  const [loginSuccess, setLogginSuccess] = useState(false)
 
   function onSubmit(values){
-    axios.post(url, values, {
-      headers:{
-        Accept: 'application/json'
-      }
-    }).then(res =>{
-      cookies.set('jwt',res.data.token)
-    }).catch(err =>{
-      console.log(err)
-    })
 
-  }
-
-  function onClick(){
-    request.get('auth')
+    request.post('auth/login',values)
       .then((res)=>{
-        console.log(res)
-      }).catch((error)=>{
+        setLogginSuccess(true)
+        cookies.set('jwt',res.token)
+      })
+      .catch((error)=>{
         console.log(error)
       })
   }
 
   return(
     <div>
+      {loginSuccess && <Redirect to='/admin' />}
       <LoginForm onSubmit={onSubmit}/>
-      <button onClick={onClick}> teste</button>
     </div>
   )
 }

@@ -17,5 +17,20 @@ export default{
       })
 
     })
+  },
+  post: function(path,values){
+    return new Promise((resolve,reject)=>{
+      axios.post(url+path, values,{
+        headers:{
+          Accept: 'application/json',
+          Authorization: cookies.get('jwt')
+        }
+      }).then((response) => {
+        resolve(response.data)
+      }).catch((error)=>{
+        reject(error)
+      })
+
+    })
   }
 }
