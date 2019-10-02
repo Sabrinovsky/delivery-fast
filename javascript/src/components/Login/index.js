@@ -11,7 +11,7 @@ export const Login = () =>{
 
   function onSubmit(values){
 
-    request.post('auth/login',values)
+    request.post('auth/login', values)
       .then((res)=>{
         setLogginSuccess(true)
         cookies.set('jwt',res.token)
