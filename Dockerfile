@@ -1,5 +1,5 @@
 FROM ruby:2.5.5
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client npm
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
@@ -15,3 +15,9 @@ EXPOSE 3000
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+RUN npm install -g yarn
+
+RUN chmod a+x /myapp/root/start.sh
+
+ENTRYPOINT /myapp/root/start.sh
