@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import  { ProductIndex }  from '../index.js'
-import  { ProductNew }  from '../new/index.js'
+import  { ProductIndex }  from './features/Index'
+import  { ProductNew }  from './features/New'
+
 export const ProductRoutes = ({match}) => {
   return (
       <Router>

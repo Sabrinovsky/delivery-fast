@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { UserProvider } from '../../services/userContext'
 import request from '../../services/request'
 import { BrowserRouter as Router, Route, Switch,Redirect} from 'react-router-dom'
-import { ProductRoutes } from '../../components/Admin/Product/routes'
+import { ProductRoutes } from '../../features/Admin/Product'
 
 export const AdminRouter = () => {
 
