@@ -12,6 +12,7 @@ export const ProductNew = () =>{
   function onSubmit(values){
     request.post('products', values)
       .then(()=>{
+        setSucess(true)
         toast.success('Cadastro realizado com sucesso!');
       })
       .catch(()=>{
@@ -21,7 +22,7 @@ export const ProductNew = () =>{
 
   return(
     <React.Fragment>
-      {sucess &&  <Redirect to='/admin'/>}
+      {sucess &&  <Redirect to='/admin/produtos'/>}
       <ProductForm onSubmit={onSubmit} />
     </React.Fragment>
   )
