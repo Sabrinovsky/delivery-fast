@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { UserProvider } from '../../services/userContext'
 import request from '../../services/request'
 import { BrowserRouter as Router, Route, Switch,Redirect} from 'react-router-dom'
+import { ProductRoutes } from '../../components/Admin/Product/routes'
 
 export const AdminRouter = () => {
 
@@ -37,8 +38,8 @@ export const AdminRouter = () => {
     <UserProvider value={user}>
       <Router>
         <Switch>
-          <Route exact path='/admin' component={()=><h1>admin</h1>}/>
-          <Route exact path='/admiawdadwn' component={()=><h1>admin</h1>}/>
+          <Route  path='/admin/produtos' component={ProductRoutes}/>
+          <Route  path='/admin' component={()=><h1>admin</h1>}/>
         </Switch>
       </Router>
     </UserProvider>
