@@ -5,7 +5,7 @@
     "yarn": "1.12.3"
   },
   "scripts": {
-    "build": "yarn -cwd javascript install && yarn -cwd javascript build",
+    "build": "yarn --cwd javascript/ install && yarn --cwd javascript build",
     "deploy": "cp -a javascript/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy"
   }
