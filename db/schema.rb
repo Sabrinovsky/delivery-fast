@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_210931) do
+ActiveRecord::Schema.define(version: 2019_10_05_230132) do
+
+  create_table "delivery_configurations", force: :cascade do |t|
+    t.decimal "max_time"
+    t.decimal "radius"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "code"
