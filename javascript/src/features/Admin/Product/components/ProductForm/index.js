@@ -26,8 +26,7 @@ export const ProductForm = ({ onSubmit, initialValues }) => {
           .integer()
           .required("Código é obrigatório"),
         description: Yup.string(),
-        price: Yup.number()
-          .typeError('Preço deve ser um número')
+        price: Yup.string()
           .required('Preço é obrigatório')
       })}
       onSubmit={onSubmit}
