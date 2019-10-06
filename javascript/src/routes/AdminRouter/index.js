@@ -4,6 +4,7 @@ import request from '../../services/request'
 import { BrowserRouter as Router, Route, Switch,Redirect} from 'react-router-dom'
 import { ProductRoutes } from '../../features/Admin/Product/routes'
 import { UserRoutes } from '../../features/Admin/User/routes'
+import { DeliveryConfigurationRoutes } from '../../features/Admin/DeliveryConfiguration/routes'
 
 export const AdminRouter = () => {
 
@@ -41,6 +42,7 @@ export const AdminRouter = () => {
         <Switch>
           <Route  path='/admin/produtos' component={ProductRoutes}/>
           <Route  path='/admin/usuarios' component={UserRoutes}/>
+          <Route  path='/admin/entrega' component={DeliveryConfigurationRoutes}/>
           <Route  path='/admin' component={()=><h1>admin</h1>}/>
         </Switch>
       </Router>
