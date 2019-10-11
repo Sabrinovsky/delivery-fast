@@ -12,7 +12,7 @@ Rails.application.configure do
 
   config.assets.compile = true
 
-  config.serve_static_assests = true
+  config.serve_static_assets = true
 
 
   # Full error reports are disabled and caching is turned on.
