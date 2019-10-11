@@ -7,5 +7,10 @@ Rails.application.routes.draw do
   get '/auth', to: 'authentication#index'
   post '/auth/login', to: 'authentication#login'
   # get '/*a', to: 'application#not_found'
-  root to: redirect('./public/index.html')
+
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
+
+
 end
