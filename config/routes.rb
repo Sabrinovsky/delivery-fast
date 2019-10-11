@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get '/auth', to: 'authentication#index'
   post '/auth/login', to: 'authentication#login'
   # get '/*a', to: 'application#not_found'
-  get '*path', to: redirect('./public/')
+  get '*path', to: redirect('./public/index.html')
 end
