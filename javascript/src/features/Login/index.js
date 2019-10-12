@@ -8,6 +8,7 @@ import request from '../../services/request'
 export const Login = () =>{
 
   const [loginSuccess, setLogginSuccess] = useState(false)
+  const [error,setError] = useState(undefined)
 
   function onSubmit(values){
 
@@ -17,14 +18,14 @@ export const Login = () =>{
         cookies.set('jwt',res.token)
       })
       .catch((error)=>{
-        console.log(error)
+        setError(error.response.data.error)
       })
   }
 
   return(
     <div>
       {loginSuccess && <Redirect to='/admin' />}
-      <LoginForm onSubmit={onSubmit}/>
+      <LoginForm onSubmit={onSubmit} error={error}/>
     </div>
   )
 }

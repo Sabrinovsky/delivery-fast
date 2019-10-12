@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import styles from './login.module.css'; // Import css modules stylesheet as styles
 import * as Yup from "yup";
 
-export const LoginForm = ({onSubmit}) => {
+export const LoginForm = ({onSubmit,error}) => {
   return (
     <Formik
       initialValues={{
@@ -58,6 +58,9 @@ export const LoginForm = ({onSubmit}) => {
               </div>
 
               <div className="form-group text-center">
+              {error && <div class="alert alert-danger" role="alert">
+                {error}
+              </div>}
                 <Field
                   type="submit"
                   placeholder="Senha"
@@ -65,7 +68,7 @@ export const LoginForm = ({onSubmit}) => {
                   className={`${styles.fadeIn} ${styles.fourth}`}
                 />
               </div>
-              
+
               <div id="formFooter">
                 <a className={`${styles.underlineHover}`} href="#">Esqueceu sua senha?</a>
               </div>
