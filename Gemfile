@@ -12,7 +12,9 @@ end
 group :production do
   gem 'pg'
 end
-
+group :test do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use Json Web Token (JWT) for token based authentication
