@@ -16,9 +16,6 @@ export default function Header() {
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">Início <span className="sr-only">(current)</span></Link>
                 </li>
-                <li className="nav-item active">
-                    <Link className="nav-link" to="/admin/produtos">Produtos <span className="sr-only">(current)</span></Link>
-                </li>
             </ul>
 
         </div>

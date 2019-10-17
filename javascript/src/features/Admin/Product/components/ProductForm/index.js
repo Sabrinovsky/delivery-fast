@@ -26,12 +26,11 @@ export const ProductForm = ({ onSubmit, initialValues }) => {
           .integer()
           .required("Código é obrigatório"),
         description: Yup.string(),
-        price: Yup.string()
-          .required('Preço é obrigatório')
+        price: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido' ,excludeEmptyString: true })
       })}
       onSubmit={onSubmit}
       render={({ errors, status, touched, isSubmitting }) => (
-        <Form className={`container ${styles.form}`} style={{ marginTop: "200px" }}>
+        <Form className={`container ${styles.form}`}>
               <div className="form-group text-center">
                 <label>Código</label>
                 <Field

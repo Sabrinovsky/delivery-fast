@@ -21,6 +21,12 @@ export default function AdminHeader() {
                 <li className="nav-item active">
                     <NavLink className="nav-link" to="/admin/produtos/novo" replace>Produtos <span className="sr-only">(current)</span></NavLink>
                 </li>
+                <li className="nav-item active">
+                    <NavLink className="nav-link" to="/admin/usuarios" replace>Usuários <span className="sr-only">(current)</span></NavLink>
+                </li>
+                <li className="nav-item active">
+                    <NavLink className="nav-link" to="/admin/entrega/editar" replace>Entrega <span className="sr-only">(current)</span></NavLink>
+                </li>
             </ul>
 
         </div>
