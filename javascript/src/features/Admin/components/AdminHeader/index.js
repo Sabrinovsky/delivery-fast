@@ -1,6 +1,8 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch,NavLink} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-export default function Header() {
+
+export default function AdminHeader() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
 
@@ -14,21 +16,21 @@ export default function Header() {
 
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/">Início <span className="sr-only">(current)</span></Link>
+                    <NavLink className="nav-link" to="/">Início <span className="sr-only">(current)</span></NavLink>
                 </li>
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/admin/produtos">Produtos <span className="sr-only">(current)</span></Link>
+                    <NavLink className="nav-link" to="/admin/produtos/novo" replace>Produtos <span className="sr-only">(current)</span></NavLink>
                 </li>
             </ul>
 
         </div>
-    <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul className="navbar-nav ml-auto">
+        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-                <Link className="nav-link" to="/admin">Admin</Link>
+                <Link className="nav-link" to="/">Home</Link>
             </li>
-        </ul>
-    </div>
+          </ul>
+        </div>
 
     </nav>
   )
