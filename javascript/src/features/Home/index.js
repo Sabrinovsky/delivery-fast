@@ -16,7 +16,7 @@ export const Home = () => {
         >
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className="d-block w-100" src="comida1.jpg" alt="First slide" />
+              <img className="d-block w-100" src="comida.jpg" alt="First slide" />
             </div>
             <div className="carousel-item">
               <img className="d-block w-100" src="comida2.jpg" alt="Second slide" />
