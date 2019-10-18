@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch,NavLink} from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function AdminHeader() {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
 
@@ -15,17 +16,29 @@ export default function AdminHeader() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/admin">Início <span className="sr-only">(current)</span></NavLink>
+                <li className="nav-item">
+                    <NavLink className="nav-link text-center" to="/admin/home">
+                        <i className="fa fa-home"></i>
+                        Início
+                    </NavLink>
                 </li>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/admin/produtos/novo" replace>Produtos <span className="sr-only">(current)</span></NavLink>
+                <li className="nav-item">
+                    <NavLink className="nav-link text-center" to="/admin/produtos/novo">
+                        <i className="fa fa-list"></i>
+                        Produtos
+                    </NavLink>
                 </li>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/admin/usuarios" replace>Usuários <span className="sr-only">(current)</span></NavLink>
+                <li className="nav-item">
+                    <NavLink className="nav-link text-center" to="/admin/usuarios">
+                        <i className="fa fa-users"></i>
+                        Usuários
+                    </NavLink>
                 </li>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/admin/entrega/editar" replace>Entrega <span className="sr-only">(current)</span></NavLink>
+                <li className="nav-item">
+                    <NavLink className="nav-link text-center" to="/admin/entrega/editar">
+                        <i className="fa fa-wrench"></i>
+                        Entrega
+                    </NavLink>
                 </li>
             </ul>
 

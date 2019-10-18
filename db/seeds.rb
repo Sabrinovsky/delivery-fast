@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(email: 'admin@admin.com', password:'123456')
 Product.create(code:1, description:'batata frita', price: 2.2)
+DeliveryConfiguration.create(max_time:12,radius:10)

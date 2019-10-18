@@ -7,6 +7,7 @@ import { UserRoutes } from '../../features/Admin/User/routes'
 import { DeliveryConfigurationRoutes } from '../../features/Admin/DeliveryConfiguration/routes'
 import AdminHeader from '../../features/Admin/components/AdminHeader'
 import Footer from '../../components/Footer'
+import PageName from '../../components/PageName';
 export const AdminRouter = () => {
 
   const [user,setUser] = useState(null)
@@ -45,7 +46,7 @@ export const AdminRouter = () => {
           <Route  path='/admin/produtos' component={ProductRoutes}/>
           <Route  path='/admin/usuarios' component={UserRoutes}/>
           <Route  path='/admin/entrega' component={DeliveryConfigurationRoutes}/>
-          <Route  path='/admin' component={()=><h1>admin</h1>}/>
+          <Route  path='/admin' component={()=> <PageName title="Admin" icon="list"/> }/>
         </Switch>
       </Router>
       <Footer />
