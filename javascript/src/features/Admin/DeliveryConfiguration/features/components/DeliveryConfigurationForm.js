@@ -16,18 +16,13 @@ export const DeliveryConfigurationForm = ({ onSubmit, configuration }) => {
   return (
     <Formik
     initialValues={configuration}
-      // validationSchema={Yup.object().shape({
-      //   maxTime: Yup.number()
-      //     .typeError('Código deve ser um número')
-      //     .integer()
-      //     .required("Código é obrigatório"),
-      //   radius: Yup.string(),
-      //   price: Yup.string()
-      //     .required('Preço é obrigatório')
-      // })}
+      validationSchema={Yup.object().shape({
+        maxTime: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido' ,excludeEmptyString: true }),
+        radius: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido' ,excludeEmptyString: true })
+      })}
       onSubmit={onSubmit}
       render={({ errors, status, touched, isSubmitting }) => (
-        <Form className={`container ${styles.form}`} style={{ marginTop: "200px" }}>
+        <Form className={`container ${styles.form}`}>
               <div className="form-group text-center">
                 <label>Tempo Máximo</label>
                 <Field

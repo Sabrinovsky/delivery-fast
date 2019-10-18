@@ -16,7 +16,7 @@ export default function AdminHeader() {
 
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <NavLink className="nav-link" to="/">Início <span className="sr-only">(current)</span></NavLink>
+                    <NavLink className="nav-link" to="/admin">Início <span className="sr-only">(current)</span></NavLink>
                 </li>
                 <li className="nav-item active">
                     <NavLink className="nav-link" to="/admin/produtos/novo" replace>Produtos <span className="sr-only">(current)</span></NavLink>

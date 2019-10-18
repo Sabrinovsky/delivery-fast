@@ -46,7 +46,7 @@ export const LoginForm = ({onSubmit,error}) => {
               <div className="form-group">
                 <Field
                   name="password"
-                  type="text"
+                  type="password"
                   placeholder="Senha"
                   className={`form-control ${styles.fadeIn} ${styles.third} ${(errors.password && touched.password ? " is-invalid" : "")}`}
                 />
