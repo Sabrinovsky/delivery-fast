@@ -12,9 +12,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create product" do
     assert_difference('Product.count') do
-      post products_url, params: { product: { code: @product.code, description: @product.description, price: @product.price } }, as: :json
+      post products_url, params: { product: { code: 57, description: @product.description, price: @product.price } }, as: :json
     end
-
     assert_response 201
   end
 

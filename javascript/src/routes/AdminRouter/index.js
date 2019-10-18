@@ -1,11 +1,12 @@
 import React,{useState, useEffect} from 'react';
 import { UserProvider } from '../../services/userContext'
 import request from '../../services/request'
-import { BrowserRouter as Router, Route, Switch,Redirect} from 'react-router-dom'
+import { HashRouter as Router, Route, Switch,Redirect} from 'react-router-dom'
 import { ProductRoutes } from '../../features/Admin/Product/routes'
 import { UserRoutes } from '../../features/Admin/User/routes'
 import { DeliveryConfigurationRoutes } from '../../features/Admin/DeliveryConfiguration/routes'
-
+import AdminHeader from '../../features/Admin/components/AdminHeader'
+import Footer from '../../components/Footer'
 export const AdminRouter = () => {
 
   const [user,setUser] = useState(null)
@@ -38,6 +39,7 @@ export const AdminRouter = () => {
 
   return (
     <UserProvider value={user}>
+      <AdminHeader />
       <Router>
         <Switch>
           <Route  path='/admin/produtos' component={ProductRoutes}/>
@@ -46,6 +48,7 @@ export const AdminRouter = () => {
           <Route  path='/admin' component={()=><h1>admin</h1>}/>
         </Switch>
       </Router>
+      <Footer />
     </UserProvider>
 
   )
