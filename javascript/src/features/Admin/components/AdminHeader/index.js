@@ -23,8 +23,8 @@ export default function AdminHeader() {
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link text-center" to="/admin/produtos/novo">
-                        <i className="fa fa-list"></i>
+                    <NavLink className="nav-link text-center" to="/admin/produtos">
+                        <i className="fa fa-cube"></i>
                         Produtos
                     </NavLink>
                 </li>
