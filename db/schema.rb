@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_230132) do
+ActiveRecord::Schema.define(version: 2019_10_30_001450) do
 
   create_table "delivery_configurations", force: :cascade do |t|
     t.decimal "max_time"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_10_05_230132) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
   end
 
 end
