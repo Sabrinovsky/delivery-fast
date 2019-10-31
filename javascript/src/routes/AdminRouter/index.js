@@ -38,7 +38,7 @@ export const AdminRouter = () => {
     )
   }
   if (!user) return null
-  console.log(user)
+
   return (
     <UserProvider value={user}>
       <AdminHeader />
