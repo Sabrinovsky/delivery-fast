@@ -1,10 +1,12 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch,NavLink} from 'react-router-dom'
-import { Link, useParams } from 'react-router-dom'
+import React, {useContext} from 'react'
+import { NavLink} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import UserConsumer from './../../../../services/userContext'
 
 export default function AdminHeader() {
+    const user = useContext(UserConsumer)
 
-  return (
+    return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
 
         <a className="navbar-brand" href="#/admin">DeliVeryFast</a>
@@ -34,12 +36,14 @@ export default function AdminHeader() {
                         Usuários
                     </NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link text-center" to="/admin/entrega/editar">
-                        <i className="fa fa-wrench"></i>
-                        Entrega
-                    </NavLink>
-                </li>
+                {user.can_access_delivery_configuration &&
+                    <li className="nav-item">
+                        <NavLink className="nav-link text-center" to="/admin/entrega/editar">
+                            <i className="fa fa-wrench"></i>
+                            Entrega
+                        </NavLink>
+                    </li>
+                }
             </ul>
 
         </div>

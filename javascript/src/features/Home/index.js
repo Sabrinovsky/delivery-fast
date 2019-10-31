@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './home.module.css'; // Import css modules stylesheet as styles
-import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header/index';
 import Footer from '../../components/Footer/index';

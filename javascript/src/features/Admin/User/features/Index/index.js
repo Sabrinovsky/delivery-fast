@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import request from '../../../../../services/request';
 import styles from './styles.module.scss'
 import PageName from '../../../../../components/PageName';
+import { Link } from 'react-router-dom'
+
 
 export const UserIndex = () => {
   const [users, setUsers] = useState(null);
@@ -18,6 +20,9 @@ export const UserIndex = () => {
     <>
       <PageName title={"Lista de Usuários"} icon={"users"} />
       <div className={`container ${styles.userIndex}`}>
+        <span className='btn btn-success'>
+          <Link  to={'/admin/usuarios/novo'}>Incluir</Link>
+        </span>
         <table className="table table-striped table-dark">
           <thead>
             <tr>

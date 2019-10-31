@@ -35,7 +35,7 @@ export default function Footer(){
                             <li><a href="javascript:void();"><i className="fa fa-angle-double-right"></i>About</a></li>
                             <li><a href="javascript:void();"><i className="fa fa-angle-double-right"></i>FAQ</a></li>
                             <li><a href="javascript:void();"><i className="fa fa-angle-double-right"></i>Get Started</a></li>
-                            <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i className="fa fa-angle-double-right"></i>Imprint</a></li>
+                            <li><a href="#" title="Design and developed by"><i className="fa fa-angle-double-right"></i>Imprint</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,13 +50,13 @@ export default function Footer(){
                         </ul>
                     </div>
                     <hr/>
-                </div>	
+                </div>
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
                         <p className="h6">DeliVeryFast All right Reserved</p>
                     </div>
                     <hr/>
-                </div>	
+                </div>
             </div>
         </section>
     )

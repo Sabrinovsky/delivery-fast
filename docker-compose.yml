@@ -4,8 +4,10 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    user: ${CURRENT_UID}
   web:
     build: .
+    user: ${CURRENT_UID}
     volumes:
       - .:/myapp
     ports:
