@@ -7,12 +7,10 @@ export const DeliveryConfigurationEdit = () => {
 
   const [configuration,setConfiguration] = useState(null)
   const [hasError, setHasError] = useState(false)
-  const [success, setSucess] = useState(false)
 
   function onSubmit(values){
     request.put('delivery_configurations/1', {max_time: values.maxTime, radius: values.radius})
       .then(()=>{
-        setSucess(true)
         toast.success('Cadastro realizado com sucesso!');
       })
       .catch(()=>{
@@ -30,7 +28,7 @@ export const DeliveryConfigurationEdit = () => {
       })
       .catch(setHasError)
   },[])
-
+  if(hasError) console.log(hasError)
   if (!configuration) return null
   return (
     <DeliveryConfigurationForm onSubmit={onSubmit} configuration={configuration}/>

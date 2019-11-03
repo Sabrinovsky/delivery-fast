@@ -48,5 +48,20 @@ export default{
       })
 
     })
+  },
+  delete: function(path){
+    return new Promise((resolve,reject)=>{
+      axios.delete(url+path,{
+        headers:{
+          Accept: 'application/json',
+          Authorization: cookies.get('jwt')
+        }
+      }).then((response) => {
+        resolve(response.data)
+      }).catch((error)=>{
+        reject(error)
+      })
+
+    })
   }
 }

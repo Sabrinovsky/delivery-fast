@@ -5,16 +5,36 @@ import PageName from '../../../../../components/PageName';
 import { Link } from 'react-router-dom'
 
 
+
+
 export const UserIndex = () => {
   const [users, setUsers] = useState(null);
   const [hasError, setHasError] = useState(false);
+  const [refetch,setRefetch] = useState(false)
+
+  const handleDelete = (id) => {
+    const teste = window.confirm('Deseja realmente excluir?')
+    if(teste){
+      request.delete(`users/${id}`)
+      .then(()=>{
+        setRefetch(true)
+        console.log('deletado')
+      })
+      .catch((erros)=>{
+        console.log(erros)
+      })
+    }
+  }
 
   useEffect(() => {
     request
       .get('users')
       .then(setUsers)
       .catch(setHasError);
-  }, []);
+    setRefetch(false)
+  }, [refetch]);
+
+  if(hasError) console.log(hasError)
 
   return (
     <>
@@ -37,8 +57,8 @@ export const UserIndex = () => {
               <tr key={key}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td className='pull-right'><a href='/admin/usuarios/'>Editar</a></td>
-                <td className='pull-right'><a href='/admin/usuarios/' >Excluir</a></td>
+                <td className='pull-right'><Link to={`/admin/usuarios/${user.id}/editar`}>Editar</Link></td>
+                <td className='pull-right'><button onClick={()=>{handleDelete(user.id)}} >Excluir</button></td>
               </tr>
             )}
           </tbody>

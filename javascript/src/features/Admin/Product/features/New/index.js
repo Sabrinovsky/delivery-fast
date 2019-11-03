@@ -15,7 +15,7 @@ export const ProductNew = () =>{
         toast.success('Cadastro realizado com sucesso!');
       })
       .catch(()=>{
-        toast.error('Não foi possível cadastrar o produto');
+        toast.error('Código informado já existe no sistema ');
       })
   }
 

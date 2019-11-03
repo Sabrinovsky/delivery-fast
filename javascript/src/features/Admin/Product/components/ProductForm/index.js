@@ -6,11 +6,8 @@ import PageName from "../../../../../components/PageName";
 
 Yup.setLocale({
   mixed: {
-    default: 'Não é válido',
-  },
-  number: {
-    integer: '${path} must be an integer'
-  },
+    default: 'Não é válido'
+  }
 });
 
 export const ProductForm = ({ onSubmit, initialValues }) => {
@@ -23,11 +20,14 @@ export const ProductForm = ({ onSubmit, initialValues }) => {
       }}
       validationSchema={Yup.object().shape({
         code: Yup.number()
+          .positive('Número precisa ser positivo')
           .typeError('Código deve ser um número')
           .integer()
           .required("Código é obrigatório"),
         description: Yup.string(),
-        price: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido', excludeEmptyString: true })
+        price: Yup.string()
+          .required('Preço é obrigatório')
+          .matches(/(\d*,\d*)|\d/, { message: 'Campo inválido', excludeEmptyString: true })
       })}
       onSubmit={onSubmit}
       render={({ errors, status, touched, isSubmitting }) => (

@@ -70,7 +70,7 @@ export const LoginForm = ({onSubmit,error}) => {
               </div>
 
               <div id="formFooter">
-                <a className={`${styles.underlineHover}`} href="#">Esqueceu sua senha?</a>
+                <a className={`${styles.underlineHover}`} href="/">Esqueceu sua senha?</a>
               </div>
 
             </div>

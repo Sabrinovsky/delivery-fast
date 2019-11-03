@@ -6,11 +6,8 @@ import PageName from "../../../../../components/PageName";
 
 Yup.setLocale({
   mixed: {
-    default: 'Não é válido',
-  },
-  number: {
-    integer: '${path} must be an integer'
-  },
+    default: 'Não é válido'
+  }
 });
 
 export const DeliveryConfigurationForm = ({ onSubmit, configuration }) => {
@@ -18,8 +15,8 @@ export const DeliveryConfigurationForm = ({ onSubmit, configuration }) => {
     <Formik
       initialValues={configuration}
       validationSchema={Yup.object().shape({
-        maxTime: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido', excludeEmptyString: true }),
-        radius: Yup.string().matches(/(\d*,\d*)|\d/, { message: 'Campo inválido', excludeEmptyString: true })
+        maxTime: Yup.string().required().matches(/^((?!-)(\d*,\d*)|\d)*$/, { message: 'Campo inválido', excludeEmptyString: true }),
+        radius: Yup.string().required().matches(/^((?!-)(\d*,\d*)|\d)*$/, { message: 'Campo inválido', excludeEmptyString: true })
       })}
       onSubmit={onSubmit}
       render={({ errors, status, touched, isSubmitting }) => (
@@ -52,8 +49,6 @@ export const DeliveryConfigurationForm = ({ onSubmit, configuration }) => {
                 className="invalid-feedback"
               />
             </div>
-
-
 
             <div className="form-group text-center">
               <button
