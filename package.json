@@ -1,12 +1,15 @@
 {
   "name": "deliveryfast",
   "engines": {
-    "node":"10.17.0",
+    "node": "10.17.0",
     "yarn": "1.19.2"
   },
   "scripts": {
     "build": "yarn --cwd javascript/ install && yarn --cwd javascript build",
     "deploy": "cp -a javascript/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy"
+  },
+  "dependencies": {
+    "cypress": "^3.7.0"
   }
 }
