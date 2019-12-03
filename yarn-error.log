@@ -1,11 +1,11 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn test
+  /usr/bin/node /usr/share/yarn/bin/yarn.js test
 
 PATH: 
-  /home/matheus/.asdf/shims:/home/matheus/.asdf/bin:/home/matheus/.rvm/gems/ruby-2.6.3/bin:/home/matheus/.rvm/gems/ruby-2.6.3@global/bin:/home/matheus/.rvm/rubies/ruby-2.6.3/bin:/home/matheus/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin:/home/matheus/.rvm/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/dart/bin:/home/filipe/flutter/bin:/home/filipe/Android/Sdk/emulator:/home/filipe/Android/Sdk/tools:/home/filipe/Android/Sdk/tools/bin:/home/filipe/Android/Sdk/platform-tools
 
 Yarn version: 
-  1.19.2
+  1.19.1
 
 Node version: 
   10.17.0
@@ -14,12 +14,12 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/matheus/projetos/delivery-fast/package.json: Unexpected token } in JSON at position 384
+  SyntaxError: /home/filipe/Projetos/delivery-fast/package.json: Unexpected token } in JSON at position 384
       at JSON.parse (<anonymous>)
-      at /usr/lib/node_modules/yarn/lib/cli.js:1625:59
+      at /usr/share/yarn/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
-      at step (/usr/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/lib/node_modules/yarn/lib/cli.js:315:13
+      at step (/usr/share/yarn/lib/cli.js:304:30)
+      at /usr/share/yarn/lib/cli.js:315:13
 
 npm manifest: 
   {
@@ -32,10 +32,10 @@ npm manifest:
       "build": "yarn --cwd javascript/ install && yarn --cwd javascript build",
       "deploy": "cp -a javascript/build/. public/",
       "heroku-postbuild": "yarn build && yarn deploy",
-      "test": "docker exec deliveryfast_web_1 bin/rails db:drop db:setup && yarn cypress run",
-  
+      "test": "docker exec delivery-fast_web_1 bin/rails db:drop db:setup && yarn cypress run",
     },
     "dependencies": {
+      "cypress": "^3.7.0"
     }
   }
 

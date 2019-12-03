@@ -2,15 +2,15 @@
   "name": "deliveryfast",
   "engines": {
     "node": "10.17.0",
-    "yarn": "1.19.2"
+    "yarn": "1.19.1"
   },
   "scripts": {
     "build": "yarn --cwd javascript/ install && yarn --cwd javascript build",
     "deploy": "cp -a javascript/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy",
-    "test": "docker exec deliveryfast_web_1 bin/rails db:drop && yarn cypress run"
-
+    "test": "docker exec delivery-fast_web_1 bin/rails db:drop db:create db:migrate db:seed && yarn cypress run"
   },
   "dependencies": {
+    "cypress": "^3.7.0"
   }
 }
