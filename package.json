@@ -7,9 +7,10 @@
   "scripts": {
     "build": "yarn --cwd javascript/ install && yarn --cwd javascript build",
     "deploy": "cp -a javascript/build/. public/",
-    "heroku-postbuild": "yarn build && yarn deploy"
+    "heroku-postbuild": "yarn build && yarn deploy",
+    "test": "docker exec deliveryfast_web_1 bin/rails db:drop && yarn cypress run"
+
   },
   "dependencies": {
-    "cypress": "^3.7.0"
   }
 }
