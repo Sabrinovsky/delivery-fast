@@ -3,6 +3,7 @@ import request from '../../../../../services/request';
 import styles from './styles.module.scss'
 import PageName from '../../../../../components/PageName';
 import { toast } from 'react-toastify';
+import {Link} from'react-router-dom';
 
 export const ProductIndex = () => {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,9 @@ export const ProductIndex = () => {
     <>
       <PageName title={"Lista de Produtos"} icon={"cube"} />
       <div className={`container ${styles.userIndex}`}>
+      <span className='btn btn-success'>
+          <Link  to={'/admin/produtos/novo'}>Novo Produto</Link>
+        </span>
         <table className="table table-striped table-dark">
           <thead>
             <tr>
