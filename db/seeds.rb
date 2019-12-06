@@ -9,6 +9,9 @@
 User.create!(name:'Atendente', username:'atendente', email: 'atendente@teste.com', password:'123456', kind:'clerk')
 User.create!(name:'Admin', username:'admin', email: 'admin@teste.com', password:'123456', kind:'admin')
 User.create!(name:'Gerente', username:'gerente', email: 'gerente@teste.com', password:'123456', kind:'manager')
+User.create!(name:'Cliente', username:'cliente', email: 'cliente@teste.com', password:'123456', kind:'manager')
+
+DeliveryConfiguration.create!(radius: 10, max_time: 10)
 
 # Product.create(code:1, description:'batata frita', price: 2.2)
 # DeliveryConfiguration.create(max_time:12,radius:10)
